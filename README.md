@@ -12,6 +12,14 @@
 
 ---
 
+## Watch
+
+<p align="center">
+  <img src="docs/demo.gif" alt="repurpose-kg" width="880"/>
+</p>
+
+The clip plays on this page. [Full video](docs/demo.mp4).
+
 ## The problem
 
 A knowledge graph of drugs, genes, and diseases will happily predict a link the graph already used to train itself. Random edge splits leak the future into the past: a 2024 indication helps "predict" a 2019 one, and the leaderboard looks solved.
