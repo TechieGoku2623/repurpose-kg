@@ -15,10 +15,10 @@
 ## Watch
 
 <p align="center">
-  <img src="docs/demo.gif" alt="repurpose-kg" width="880"/>
+  <img src="docs/demo.gif" alt="repurpose-kg: metformin ranks on the 2020 cut, compound-x abstains" width="880"/>
 </p>
 
-The clip is `python -m repurpose_kg`, the program in this repository. [Full video](docs/demo.mp4).
+The clip is the working screen: metformin ranks on the time cut, and compound-x abstains. [Open the demo](docs/demo.html). [Full video](docs/demo.mp4).
 
 ## The problem
 

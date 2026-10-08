@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>repurpose-kg</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #0e1610; color: #e6f5dc; font-family: Inter, system-ui, sans-serif; }
+  body { padding: 28px 36px; }
+  header { display: flex; justify-content: space-between; align-items: end; margin-bottom: 8px; }
+  h1 { margin: 0; font-size: 32px; letter-spacing: -0.04em; }
+  header p { margin: 0; color: #9dcea0; }
+  .years { display: flex; justify-content: space-between; margin: 18px 8px 28px; position: relative; }
+  .years:before { content: ""; position: absolute; left: 0; right: 0; top: 14px; height: 3px; background: #2f6a38; }
+  .year { position: relative; z-index: 1; text-align: center; width: 90px; }
+  .year i { display: block; width: 18px; height: 18px; border-radius: 50%; background: #8fdb6a; margin: 6px auto 8px; }
+  .year.cut i { background: #f0d48a; }
+  .year.future i { background: #5a6a58; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  article { background: #162116; border: 1px solid #2f6a38; border-radius: 18px; padding: 20px 22px; min-height: 210px; opacity: 0; transform: translateY(8px); transition: 0.45s ease; }
+  article.show { opacity: 1; transform: none; }
+  h2 { margin: 0 0 8px; font-size: 26px; }
+  .muted { color: #9dcea0; }
+  .scores { display: flex; gap: 18px; margin-top: 22px; }
+  .scores div { flex: 1; background: #0e1610; border-radius: 12px; padding: 12px 14px; }
+  .scores b { display: block; font-size: 28px; margin-top: 4px; }
+  .hold { color: #f0d48a; }
+</style>
+</head>
+<body>
+<header>
+  <h1>repurpose-kg</h1>
+  <p>Cut year 2020. Gene links from 2020 on do not count.</p>
+</header>
+<div class="years">
+  <div class="year"><i></i>2016<br>AMPK</div>
+  <div class="year"><i></i>2018<br>GDF15 known</div>
+  <div class="year cut"><i></i>2020<br>cut</div>
+  <div class="year future"><i></i>2023<br>GDF15 drug link</div>
+  <div class="year future"><i></i>2024<br>compound-x</div>
+</div>
+<section class="cards">
+  <article id="a">
+    <h2>metformin + aging</h2>
+    <div class="muted">Indication year 2021 · 4 papers · rank</div>
+    <div class="scores"><div>time score<b>1</b></div><div>leaky score<b>2</b></div></div>
+  </article>
+  <article id="b">
+    <h2>compound-x + fibrosis</h2>
+    <div class="muted">Indication year 2024 · 1 paper</div>
+    <div class="scores"><div>time score<b>0</b></div><div class="hold">decision<b>abstain</b></div></div>
+  </article>
+</section>
+<script>
+const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+async function play() {
+  await wait(900);
+  document.getElementById("a").classList.add("show");
+  await wait(800);
+  document.getElementById("b").classList.add("show");
+}
+</script>
+</body>
+</html>
