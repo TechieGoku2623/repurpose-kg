@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Status:** problem brief. The question and the measurement are written here. An implementation is not in this repository yet.
+**Status:** runnable on designed examples. Not a clinical system, a LIMS, or a trained model.
 
 </div>
 
@@ -18,7 +18,7 @@
   <img src="docs/demo.gif" alt="repurpose-kg" width="880"/>
 </p>
 
-The clip plays on this page. [Full video](docs/demo.mp4).
+The clip is `python -m repurpose_kg`, the program in this repository. [Full video](docs/demo.mp4).
 
 ## The problem
 
@@ -39,7 +39,17 @@ Hits without the cut date are not results. A demo that highlights a famous repur
 
 ## What this repository is
 
-The evaluation rule for a repurposing graph, written down before a model is fit. Phenotype-side ranking of genes and diseases, which is a different question, is in [phenorank](https://github.com/TechieGoku2623/phenorank). This repository does not ship a trained link predictor.
+`repurpose-kg` scores future indications from gene links dated before the cut, and prints the leaky score beside it. It does not ship a trained link predictor. Phenotype ranking is a different question, in [phenorank](https://github.com/TechieGoku2623/phenorank).
+
+## Run
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .
+python -m repurpose_kg
+python -m unittest discover -s tests -v
+```
 
 ## Author
 
